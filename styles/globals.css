@@ -264,7 +264,7 @@ code {
 .skip-link:focus {
   transform: translateY(0);
 }
-.testnet-banner {
+.ca-banner {
   min-height: 32px;
   background: var(--accent);
   color: #000;
@@ -275,12 +275,6 @@ code {
   gap: 8px;
   padding: 5px 16px;
   font-size: var(--text-small);
-}
-.mobile-network {
-  display: none;
-}
-.banner-extra {
-  margin-left: 4px;
 }
 .header {
   min-height: 96px;
@@ -324,18 +318,12 @@ code {
   align-items: center;
   gap: 20px;
 }
-.network-badge {
+.ca-badge {
   display: flex;
   align-items: center;
   gap: 7px;
   font-size: var(--text-small);
   white-space: nowrap;
-}
-.network-badge > span {
-  width: 7px;
-  height: 7px;
-  background: #247044;
-  border-radius: 50%;
 }
 .wallet-button {
   min-height: 42px;
@@ -1731,7 +1719,7 @@ blockquote {
   :is(
     .logo,
     .button-yellow,
-    .testnet-banner,
+    .ca-banner,
     .dead-banner,
     .footer,
     .stamp,
@@ -1852,7 +1840,7 @@ blockquote {
   .header-utilities {
     gap: 12px;
   }
-  .network-badge {
+  .ca-badge {
     display: none;
   }
   .hero {
@@ -1890,7 +1878,7 @@ blockquote {
   .header nav {
     display: none;
   }
-  .network-badge {
+  .ca-badge {
     display: flex;
   }
   .hero {
@@ -2013,15 +2001,9 @@ blockquote {
   .content-width {
     width: calc(100% - 36px);
   }
-  .testnet-banner {
+  .ca-banner {
     min-height: 28px;
     padding-block: 4px;
-  }
-  .banner-extra {
-    display: none;
-  }
-  .mobile-network {
-    display: inline;
   }
   .header {
     min-height: 76px;
@@ -2030,7 +2012,7 @@ blockquote {
   .header-utilities {
     gap: 0;
   }
-  .network-badge {
+  .ca-badge {
     display: none;
   }
   .logo {

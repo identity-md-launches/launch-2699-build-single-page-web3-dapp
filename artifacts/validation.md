@@ -4,9 +4,51 @@
 
 This is a worker review of a single-page **mock dApp**, not an independent audit or a live-token deployment. The complete production export is `dist/`; all mock flows run locally without a wallet or backend. Wallet connection uses wagmi/viem independently of mock transactions. No contract address, key, recipient or real oracle is invented.
 
-Implementation choices: Base Sepolia for the optional connector; a 1 PLEA minimum and six decimal places; a 0.10 IMD objection fee; fixed mock held-time, P/L, trend and price; a five-second simulated oracle response. These are explicitly demo economics, not chain observations. The default example sells 90,000 of 450,000 PLEA and produces fact 36 → need 35. Simulation controls can reset the dead-man state; the described protocol's switch would be permanent.
+Implementation choices: a test-network chain definition for the optional connector (never named on the page; see the follow-up below); a 1 PLEA minimum and six decimal places; a 0.10 IMD objection fee; fixed mock held-time, P/L, trend and price; a five-second simulated oracle response. These are explicitly demo economics, not chain observations. The default example sells 90,000 of 450,000 PLEA and produces fact 36 → need 35. Simulation controls can reset the dead-man state; the described protocol's switch would be permanent.
 
 The pinned Better Interface workflow and all six domain principles were read and applied during implementation. The pinned design probe was run against the production export. The supplied browser tool could not start because its Chrome distribution was missing; temporary Playwright Chromium and WebKit browsers were used instead. Dependencies and build caches remained outside the repository. Browser tests own a bounded foreground server, serve the export at `/review/plea/`, and close it when finished.
+
+## Follow-up job: “CA: Coming soon” and @pleaimd
+
+Request: replace the “Base Sepolia · Test tokens, no value” banner with “CA: Coming soon”; wherever the site shows a contract address or chain, show “CA: Coming soon” instead; change every X handle and link to @pleaimd (https://x.com/pleaimd); keep everything else as it is.
+
+| Change | Where |
+| --- | --- |
+| The banner shows only “CA: Coming soon” at every width. Its flask icon, phone-only “Base Sepolia ·” prefix, “Test tokens, no value.” and desktop “A fully simulated demo. Mainnet soon.” are removed. The class is now `.ca-banner`. | `pages/index.tsx:52`, `styles/globals.css:267` |
+| The header network badge “Base Sepolia” and its green live dot are replaced by “CA: Coming soon” (`.ca-badge`). The breakpoints where it shows are unchanged. | `pages/index.tsx:74`, `styles/globals.css:321` |
+| The wallet wrong-network label “Switch to Base Sepolia” is now “Switch network”, and its declined-switch error no longer names the chain. | `components/ConnectWallet.tsx:69`, `:89` |
+| The footer X link changed from `https://x.com/plea_imd` / “Follow @plea_imd” to `https://x.com/pleaimd` / “Follow @pleaimd”. This was the only X handle or link on the site. | `pages/index.tsx:157`, `:161` |
+| The browser wallet test now expects the “Switch network” label. | `scripts/check-wallets.mjs:104`, `:107`, `:178` |
+
+Judgement calls:
+- Putting “CA: Coming soon” on the wrong-network *button* would have made a working action unreadable. So the button got the neutral “Switch network”, which still removes the chain name as asked.
+- The page never displayed a contract address; the Letterbox example already says “Mock contract”. “A meme token on Uniswap v4” names a DEX, not a chain, and “0 ETH” and “Days live on testnet” were left as they are under “keep everything else”.
+- The wagmi/viem chain definition in `lib/wallet.ts` is unchanged so wallet connection still works. Its chain name exists in the JS bundle only so it can be sent to a wallet's add-network request; it is not rendered on the page.
+- At widths above 1100px and from 641–820px the banner and header badge both read “CA: Coming soon”. That follows the literal request, because the badge was a place that showed the chain.
+
+Better Interface review of this change, across all six domains:
+- **Accessibility:** the banner and badge are plain text with no icon-only meaning. The removed flask icon was `aria-hidden`. Chromium light and dark axe scans report `[]`.
+- **Layout:** the 390 probe screenshot was inspected. The banner sits on one line above the logo, wallet control, hero, both actions and the amount field, and there is no overflow. At 1440 the banner and badge were also inspected.
+- **Writing:** the requested wording is used exactly. The button label stays an action rather than a status.
+- **Typography:** both new elements use the existing `--text-small` token, so the type scale is unchanged.
+- **Colors:** the same black-on-yellow and ink-on-cream pairs are used, and the rendered contrast checks in the browser suite pass.
+- **UI:** the green dot was removed because it signalled a live network that no longer applies.
+
+No further findings.
+
+Commands run for this job, with their actual results:
+
+| Command | Result |
+| --- | --- |
+| `npm ci` | Exit 0 |
+| `npm run typecheck` | Exit 0 |
+| `npm test` | Exit 0, 30 passed, 0 failed |
+| `npm run build` | Exit 0, static export ready in `dist/` with relative assets |
+| `node scripts/check-export.mjs` | Passed metadata, relative URLs and byte budgets |
+| `npm run test:browser` | Chromium 15/15 check groups passed with zero console/resource errors. WebKit could not launch here because system libraries (libgtk-4, gstreamer and others) were missing, which made the script's overall exit 1. WebKit was **not** rerun for this change, and the `webkit-*.json` files are from the original job. |
+| `node .imd/reads/skills/design-critic/scripts/taste.mjs --out test/scratch/taste` | 13/16 checks, the same three documented brief overrides as before. Share metadata passes. |
+
+`validation-data/results.json`, `taste.json`, the `chromium-*` JSON files and the screenshots in `screens/` other than `cabal-dead-webkit.png` were refreshed from this run. The remaining sections below describe the original build.
 
 ## Requirement coverage
 
@@ -14,7 +56,7 @@ The pinned Better Interface workflow and all six domain principles were read and
 | --- | --- | --- |
 | Neobrutalism, cream/yellow/black, status colors, Space Grotesk/Inter/mono | Met, with font limitation below | Tokens in `styles/globals.css`; local fonts and artwork; no remote visual assets for the mock flow |
 | Hero, exact typewriter line, PLEA logo, token badge, Buy and Plead actions | Met | `components/Hero.tsx`, `components/ui.tsx`; first-screen screenshots |
-| Wallet control, network and “test tokens, no value” banner | Met | Header and phone banner in `pages/index.tsx`; named-wallet and phone tests |
+| Wallet control and top banner (now “CA: Coming soon”) | Met | Banner and header badge in `pages/index.tsx`; named-wallet and phone tests |
 | Two-column “Plead to sell” form, amount/balance and five quick amounts | Met | `components/PleaForm.tsx`; mobile stacks; amount limit and quick-action tests |
 | UTF-8 counter, progress and four live validation checks | Met | `lib/validation.ts`; Latin/Cyrillic/CJK, controls, hidden characters, reserved markers and byte boundaries tested |
 | Stepper, 0.50 IMD fee, approval once, receipt and 1% slippage | Met | Form/fee dialog and contract adapter; invalid inputs do not consume fees |
@@ -26,7 +68,7 @@ The pinned Better Interface workflow and all six domain principles were read and
 | Transaction example and animated hex decoding | Met | `components/Transaction.tsx`; readable text verified; symbolic mock Letterbox destination is disclosed |
 | Season leaderboard, best-three/points/prize, seat multiplier and paid history | Met | Complete table retained in phone scroll region; fictional sample players/prizes disclosed |
 | 33-hour dead-man clock, 30 seats, dark theme and unrestricted selling | Met | Timer and injected-clock tests; root theme, closed-case copy and free-selling dialog |
-| Footer stats, “Make your case. Mainnet soon.” and X link | Met | 30 actual local unit tests, zero independent audits, zero deployed testnet days; supplied social handle |
+| Footer stats, “Make your case. Mainnet soon.” and X link | Met | 30 actual local unit tests, zero independent audits, zero deployed testnet days; X link is now @pleaimd (https://x.com/pleaimd) |
 | Next.js + Tailwind + TypeScript, wagmi/viem and Framer Motion | Met | Manifest/lockfile and production build; typed adapter/provider boundary |
 | Mock hook/adapter methods and demo outcome selection | Met | `lib/mock-contract.ts`, `components/demo-context.tsx`; approved, denied, objection and dead states |
 | Responsive layout and usable first 390px screen | Met | Six widths; hero actions and amount field visible at 390×844; no page overflow in tested initial states or 200% text case |

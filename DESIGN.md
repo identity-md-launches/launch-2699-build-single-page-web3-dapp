@@ -25,7 +25,7 @@ The canonical format is hexadecimal. Tokens are declared in `styles/globals.css:
 | `--objection` | `#c084fc` | Same | Objection, sustained and overruled stamps |
 | `--focus` | `#2459ce` | `#ffd324` | Keyboard outline |
 
-Status fills always use black text, a written status and an explicit border. Dark mode resolves foregrounds explicitly on each element; yellow actions, status surfaces and the footer scope `--ink` locally to black, and black actions scope it to white. This avoids stale inherited foregrounds in WebKit. Color is never the sole verdict cue. Buttons with a black background use white text. The footer and the test-token banner retain black ink on yellow in both themes. Native dialogs retain cream/white surfaces and dark text even when opened from the dark page.
+Status fills always use black text, a written status and an explicit border. Dark mode resolves foregrounds explicitly on each element; yellow actions, status surfaces and the footer scope `--ink` locally to black, and black actions scope it to white. This avoids stale inherited foregrounds in WebKit. Color is never the sole verdict cue. Buttons with a black background use white text. The footer and the “CA: Coming soon” banner retain black ink on yellow in both themes. Native dialogs retain cream/white surfaces and dark text even when opened from the dark page.
 
 Supporting surface values include `#f9f8f5` behind the stepper, `#eeeae2` on the light dead-man card and `#ece9e2` on table headers. Inline errors use `#a51e1e` in light mode and `#f87171` in dark mode; the modal retains the light error value. Yellow hover is `#ffdf5b`.
 
@@ -60,7 +60,7 @@ The hero uses two columns with a paper illustration, becoming a text-and-actions
 
 At 820px and below, full navigation is removed and the jury's sorted row becomes an internal horizontal scroll area. On phones the unsorted jury uses five columns of square seats. After sorting it stays one row, brings the seventeenth seat into view, exposes a keyboard-focusable scroll region and includes a scroll hint. The leaderboard keeps **all five columns** in a minimum-600px table with its own scroll container and explicit hint. Neither table nor jury creates page-level horizontal scrolling.
 
-The banner exposes the configured network name on phones; desktop uses the network badge next to the wallet control. The first 390×844 view includes the product, both main actions and the amount field. Viewports 320, 390, 640, 820, 1024 and 1440 were used in browser validation. The 200% root-text enlargement check is separate from browser-native zoom; see the validation limits.
+The site never names a chain or contract address. A full-width yellow `.ca-banner` (`pages/index.tsx:52`) reads only “CA: Coming soon” at every width, in `--text-small` black text with a 2px black bottom rule. The header `.ca-badge` (`pages/index.tsx:74`) repeats “CA: Coming soon” as plain small text next to the wallet control above 1100px and between 641px and 820px; it is hidden from 821–1100px and at 640px and below, where the banner alone carries it. The wallet control’s wrong-network state reads “Switch network” without naming the chain. The footer’s outline button links to https://x.com/pleaimd as “Follow @pleaimd”. The first 390×844 view includes the product, both main actions and the amount field. Viewports 320, 390, 640, 820, 1024 and 1440 were used in browser validation. The 200% root-text enlargement check is separate from browser-native zoom; see the validation limits.
 
 ## Elevation & depth
 

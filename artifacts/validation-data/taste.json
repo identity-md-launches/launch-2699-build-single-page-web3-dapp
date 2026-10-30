@@ -4,14 +4,14 @@
    "name": "render",
    "passed": true,
    "exitCode": 0,
-   "durationMs": 11438,
+   "durationMs": 13132,
    "output": "renders, no script errors or missing local files"
   },
   {
    "name": "layout",
    "passed": true,
    "exitCode": 0,
-   "durationMs": 1,
+   "durationMs": 0,
    "output": "no horizontal scroll at 320, 390 or 1440\nno text box overlaps another\nno floating control covers text\nno text cut off by overflow: hidden"
   },
   {
@@ -25,7 +25,7 @@
    "name": "contrast",
    "passed": true,
    "exitCode": 0,
-   "durationMs": 0,
+   "durationMs": 1,
    "output": "all measured text meets 4.5:1 (3:1 large)"
   },
   {
@@ -53,21 +53,21 @@
    "name": "type-sizes",
    "passed": true,
    "exitCode": 0,
-   "durationMs": 1,
-   "output": "390: 5 sizes in use, 5 with one-offs (13px×195, 16px×7, 20px×11, 28px×13, 44px×6)\n1440: 6 sizes in use, 6 with one-offs (13px×216, 16px×11, 20px×10, 28px×14, 44px×2, 80px×5)\nbar: 6 sizes used more than once, 8 counting one-offs, per width"
+   "durationMs": 0,
+   "output": "390: 5 sizes in use, 5 with one-offs (13px×194, 16px×7, 20px×11, 28px×13, 44px×6)\n1440: 6 sizes in use, 6 with one-offs (13px×215, 16px×11, 20px×10, 28px×14, 44px×2, 80px×5)\nbar: 6 sizes used more than once, 8 counting one-offs, per width"
   },
   {
    "name": "type-faces",
    "passed": true,
    "exitCode": 0,
-   "durationMs": 0,
+   "durationMs": 1,
    "output": "families (3): inter, space grotesk, ui-monospace\nweights (3): 400, 600, 800"
   },
   {
    "name": "glyphs",
    "passed": true,
    "exitCode": 0,
-   "durationMs": 1,
+   "durationMs": 0,
    "output": "no em dashes or emoji in text"
   },
   {
@@ -75,7 +75,7 @@
    "passed": false,
    "exitCode": 1,
    "durationMs": 0,
-   "output": "6 two-beat lines; a stack is four or more, so keep the best and cut the rest:\n\"Buying is open. Selling needs a plea.▍\" (section.hero:nth-of-type(1) > div.hero-copy:nth-of-type(1) > p.typewriter:nth-of-type(1) > span:nth-of-type(2))\n\"30 judges. 17 must agree. AI oracle panel · simulated\" (#cabal > div.cabal-card.card:nth-of-type(2) > div.panel-answer:nth-of-type(4))\n\"30 judges. 17 must agree.\" (#cabal > div.cabal-card.card:nth-of-type(2) > div.panel-answer:nth-of-type(4) > span:nth-of-type(1))\n\"No site? Plead in a transaction.\" (#letterbox > div.transaction-card.card:nth-of-type(2) > div.transaction-copy:nth-of-type(1) > h3)\n\"Test tokens, no value. A fully simulated demo. Mainnet soon.\" (#top > div.testnet-banner)\n\"A fully simulated demo. Mainnet soon.\" (#top > div.testnet-banner > span.banner-extra:nth-of-type(3))"
+   "output": "4 two-beat lines; a stack is four or more, so keep the best and cut the rest:\n\"Buying is open. Selling needs a plea.▍\" (section.hero:nth-of-type(1) > div.hero-copy:nth-of-type(1) > p.typewriter:nth-of-type(1) > span:nth-of-type(2))\n\"30 judges. 17 must agree. AI oracle panel · simulated\" (#cabal > div.cabal-card.card:nth-of-type(2) > div.panel-answer:nth-of-type(4))\n\"30 judges. 17 must agree.\" (#cabal > div.cabal-card.card:nth-of-type(2) > div.panel-answer:nth-of-type(4) > span:nth-of-type(1))\n\"No site? Plead in a transaction.\" (#letterbox > div.transaction-card.card:nth-of-type(2) > div.transaction-copy:nth-of-type(1) > h3)"
   },
   {
    "name": "repetition",
@@ -89,7 +89,7 @@
    "passed": true,
    "exitCode": 0,
    "durationMs": 0,
-   "output": "prose on the first screen: 46 words at 390 (bar 60), 74 at 1440 (bar 90)\nall words on the first screen: 94 at 390, 111 at 1440\nwhole page: 727 words, 244 of them prose"
+   "output": "prose on the first screen: 46 words at 390 (bar 60), 68 at 1440 (bar 90)\nall words on the first screen: 91 at 390, 105 at 1440\nwhole page: 720 words, 238 of them prose"
   },
   {
    "name": "chrome",
@@ -109,12 +109,12 @@
    "name": "share",
    "passed": true,
    "exitCode": 0,
-   "durationMs": 0,
+   "durationMs": 1,
    "output": "title \"PLEA — Make your case.\", favicon, og:title, og:image, description"
   }
  ],
  "target": "dist",
- "at": "2026-10-30T09:42:05.609Z",
+ "at": "2026-10-30T10:11:42.340Z",
  "bar": {
   "sizes": 6,
   "strays": 8,
@@ -137,7 +137,7 @@
    "art": 0,
    "scrollWidth": 390,
    "height": 6093,
-   "texts": 232,
+   "texts": 231,
    "offenders": [],
    "overlaps": [],
    "floating": [],
@@ -318,7 +318,7 @@
      "h": 48,
      "cx": 195,
      "cy": 5984.671875,
-     "label": "Follow @plea_imd"
+     "label": "Follow @pleaimd"
     },
     {
      "sel": "footer.footer > div.content-width > div.footer-bottom:nth-of-type(2) > a.small",
@@ -420,7 +420,7 @@
    "art": 0,
    "scrollWidth": 1440,
    "height": 4740,
-   "texts": 258,
+   "texts": 257,
    "offenders": [],
    "overlaps": [],
    "floating": [],
@@ -621,11 +621,11 @@
     },
     {
      "sel": "footer.footer > div.content-width > div.footer-main:nth-of-type(1) > a.button.button-outline:nth-of-type(2)",
-     "w": 186,
+     "w": 180,
      "h": 48,
-     "cx": 1219,
+     "cx": 1222,
      "cy": 4617.140625,
-     "label": "Follow @plea_imd"
+     "label": "Follow @pleaimd"
     },
     {
      "sel": "footer.footer > div.content-width > div.footer-bottom:nth-of-type(2) > a.small",
@@ -697,14 +697,6 @@
    "marquees": [],
    "slogans": [
     {
-     "sel": "#top > div.testnet-banner",
-     "text": "Test tokens, no value. A fully simulated demo. Mainnet soon."
-    },
-    {
-     "sel": "#top > div.testnet-banner > span.banner-extra:nth-of-type(3)",
-     "text": "A fully simulated demo. Mainnet soon."
-    },
-    {
      "sel": "section.hero:nth-of-type(1) > div.hero-copy:nth-of-type(1) > p.typewriter:nth-of-type(1) > span:nth-of-type(2)",
      "text": "Buying is open. Selling needs a plea.▍"
     },
@@ -732,10 +724,10 @@
  },
  "texts390": [
   {
-   "sel": "#top > div.testnet-banner > span.mobile-network:nth-of-type(1)",
-   "text": "Base Sepolia ·",
-   "words": 2,
-   "tag": "span",
+   "sel": "#top > div.ca-banner",
+   "text": "CA: Coming soon",
+   "words": 3,
+   "tag": "div",
    "size": 13,
    "weight": 400,
    "family": "inter",
@@ -748,36 +740,10 @@
    "inCode": false,
    "heading": false,
    "pill": false,
-   "x": 89.5,
-   "y": 4,
-   "w": 88,
-   "h": 19.5,
-   "fixed": false,
-   "chrome": false,
-   "data": false,
-   "digits": 0
-  },
-  {
-   "sel": "#top > div.testnet-banner > span:nth-of-type(2)",
-   "text": "Test tokens, no value.",
-   "words": 4,
-   "tag": "span",
-   "size": 13,
-   "weight": 400,
-   "family": "inter",
-   "mono": false,
-   "upper": false,
-   "authoredCaps": false,
-   "tracking": 0,
-   "ratio": 14.6,
-   "large": false,
-   "inCode": false,
-   "heading": false,
-   "pill": false,
-   "x": 185.5,
-   "y": 4,
-   "w": 137,
-   "h": 19.5,
+   "x": 0,
+   "y": 0,
+   "w": 390,
+   "h": 29.5,
    "fixed": false,
    "chrome": false,
    "data": false,
@@ -6687,8 +6653,8 @@
   },
   {
    "sel": "footer.footer > div.content-width > div.footer-main:nth-of-type(1) > a.button.button-outline:nth-of-type(2)",
-   "text": "Follow @plea_imd",
-   "words": 3,
+   "text": "Follow @pleaimd",
+   "words": 2,
    "tag": "a",
    "size": 13,
    "weight": 600,
@@ -6766,10 +6732,10 @@
  ],
  "texts1440": [
   {
-   "sel": "#top > div.testnet-banner > span:nth-of-type(2)",
-   "text": "Test tokens, no value.",
-   "words": 4,
-   "tag": "span",
+   "sel": "#top > div.ca-banner",
+   "text": "CA: Coming soon",
+   "words": 3,
+   "tag": "div",
    "size": 13,
    "weight": 400,
    "family": "inter",
@@ -6782,36 +6748,10 @@
    "inCode": false,
    "heading": false,
    "pill": false,
-   "x": 537.5,
-   "y": 5.25,
-   "w": 137,
-   "h": 19.5,
-   "fixed": false,
-   "chrome": false,
-   "data": false,
-   "digits": 0
-  },
-  {
-   "sel": "#top > div.testnet-banner > span.banner-extra:nth-of-type(3)",
-   "text": "A fully simulated demo. Mainnet soon.",
-   "words": 6,
-   "tag": "span",
-   "size": 13,
-   "weight": 400,
-   "family": "inter",
-   "mono": false,
-   "upper": false,
-   "authoredCaps": false,
-   "tracking": 0,
-   "ratio": 14.6,
-   "large": false,
-   "inCode": false,
-   "heading": false,
-   "pill": false,
-   "x": 686.5,
-   "y": 5.25,
-   "w": 238,
-   "h": 19.5,
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 32,
    "fixed": false,
    "chrome": false,
    "data": false,
@@ -6922,9 +6862,9 @@
    "digits": 0
   },
   {
-   "sel": "#top > header.header.content-width > div.header-utilities > span.network-badge",
-   "text": "Base Sepolia",
-   "words": 2,
+   "sel": "#top > header.header.content-width > div.header-utilities > span.ca-badge",
+   "text": "CA: Coming soon",
+   "words": 3,
    "tag": "span",
    "size": 13,
    "weight": 400,
@@ -6938,9 +6878,9 @@
    "inCode": false,
    "heading": false,
    "pill": false,
-   "x": 1046,
+   "x": 1030,
    "y": 69.25,
-   "w": 94,
+   "w": 110,
    "h": 19.5,
    "fixed": false,
    "chrome": true,
@@ -13371,8 +13311,8 @@
   },
   {
    "sel": "footer.footer > div.content-width > div.footer-main:nth-of-type(1) > a.button.button-outline:nth-of-type(2)",
-   "text": "Follow @plea_imd",
-   "words": 3,
+   "text": "Follow @pleaimd",
+   "words": 2,
    "tag": "a",
    "size": 13,
    "weight": 600,
@@ -13386,9 +13326,9 @@
    "inCode": false,
    "heading": false,
    "pill": false,
-   "x": 1126,
+   "x": 1132,
    "y": 4593.140625,
-   "w": 186,
+   "w": 180,
    "h": 48,
    "fixed": false,
    "chrome": true,

@@ -49,14 +49,7 @@ export default function Home() {
       <a href="#plead" className="skip-link">
         Skip to plea form
       </a>
-      <div className="testnet-banner">
-        <FlaskConical size={14} aria-hidden="true" />
-        <span className="mobile-network">Base Sepolia ·</span>
-        <span>Test tokens, no value.</span>
-        <span className="banner-extra">
-          A fully simulated demo. Mainnet soon.
-        </span>
-      </div>
+      <div className="ca-banner">CA: Coming soon</div>
       {dead && (
         <div className="dead-banner" role="alert">
           <strong>CABAL DEAD</strong>
@@ -78,10 +71,7 @@ export default function Home() {
           <a href="#leaderboard">Leaderboard</a>
         </nav>
         <div className="header-utilities">
-          <span className="network-badge">
-            <span />
-            Base Sepolia
-          </span>
+          <span className="ca-badge">CA: Coming soon</span>
           <ConnectWallet />
         </div>
       </header>
@@ -164,11 +154,11 @@ export default function Home() {
             </h2>
             <a
               className="button button-outline"
-              href="https://x.com/plea_imd"
+              href="https://x.com/pleaimd"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Follow @plea_imd
+              Follow @pleaimd
               <ArrowUpRight size={18} />
             </a>
           </div>

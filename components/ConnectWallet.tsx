@@ -66,7 +66,7 @@ export function ConnectWallet() {
       await switchChainAsync({ chainId: chain.id });
     } catch {
       setError(
-        "Network switch declined. Switch to Base Sepolia in your wallet, then try again.",
+        "Network switch declined. Approve the network switch in your wallet, then try again.",
       );
       setOpen(true);
     }
@@ -86,7 +86,7 @@ export function ConnectWallet() {
             ? "Switching…"
             : isConnected && address
               ? chainId !== chain.id
-                ? "Switch to Base Sepolia"
+                ? "Switch network"
                 : `${address.slice(0, 6)}…${address.slice(-4)}`
               : "Connect wallet"}
         </span>

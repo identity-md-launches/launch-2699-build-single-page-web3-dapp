@@ -101,10 +101,10 @@ export async function checkWallets(browser, url, output, name) {
       .getByRole("button", { name: "Review Wallet", exact: true })
       .click();
     await page
-      .getByRole("button", { name: "Switch to Base Sepolia", exact: true })
+      .getByRole("button", { name: "Switch network", exact: true })
       .waitFor();
     await page
-      .getByRole("button", { name: "Switch to Base Sepolia", exact: true })
+      .getByRole("button", { name: "Switch network", exact: true })
       .click();
     await page.waitForFunction(() => {
       const b = document.querySelector(".wallet-button");
@@ -175,7 +175,7 @@ export async function checkWallets(browser, url, output, name) {
       .getByRole("button", { name: "Review Wallet", exact: true })
       .click();
     await embeddedPage
-      .getByRole("button", { name: "Switch to Base Sepolia", exact: true })
+      .getByRole("button", { name: "Switch network", exact: true })
       .waitFor();
     assert.equal(
       await embeddedPage.evaluate(
