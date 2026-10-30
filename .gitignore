@@ -1,0 +1,11 @@
+# Explicit path and byte budgets are documented in artifacts/path-budget.md.
+!dist/
+!dist/**
+!artifacts/
+!artifacts/**
+**/node_modules/
+**/.next/
+**/out/
+**/.cache/
+**/*.tsbuildinfo
+test/scratch/

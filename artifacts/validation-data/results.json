@@ -1,0 +1,128 @@
+[
+  {
+    "browser": "chromium",
+    "status": "passed",
+    "limitations": [],
+    "checks": [
+      "relative scripts, local fonts and share metadata load",
+      "six responsive widths; product amount and main action visible at 390",
+      "wallet sheet has a recoverable no-provider error, Escape closes and restores focus",
+      "amount limits, quick amounts, reserved/hidden text and UTF-8 errors work",
+      "fee approval → pending → 30 judges → approved → sold → overruled",
+      "denial, live four-hour countdown and one paid appeal",
+      "fresh objection panel sustains, sale stands, points are removed",
+      "transaction decoding and past/current leaderboard views",
+      "dead-man dark theme closes cases and enables free selling",
+      "buying is open with balance validation and simulated receipt",
+      "primary plea approval and sale completed with keyboard only",
+      "keyboard focus and automated accessibility scan",
+      "rendered contrast in both themes, 200% text reflow, focus and reduced motion",
+      "EIP-6963 discovery, rejection, chain add/switch, disconnect and four mobile wallet links",
+      "zero console errors, failed local assets or backend requests"
+    ],
+    "metrics": [
+      {
+        "width": 320,
+        "scrollWidth": 320,
+        "actionBottom": 415.75,
+        "amountTop": 878.328125
+      },
+      {
+        "width": 390,
+        "scrollWidth": 390,
+        "actionBottom": 327.375,
+        "amountTop": 755.453125
+      },
+      {
+        "width": 640,
+        "scrollWidth": 640,
+        "actionBottom": 327.375,
+        "amountTop": 734.65625
+      },
+      {
+        "width": 820,
+        "scrollWidth": 820,
+        "actionBottom": 453.734375,
+        "amountTop": 856.984375
+      },
+      {
+        "width": 1024,
+        "scrollWidth": 1024,
+        "actionBottom": 507.171875,
+        "amountTop": 953.484375
+      },
+      {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "actionBottom": 562.265625,
+        "amountTop": 1015.25
+      }
+    ],
+    "errors": [],
+    "failed": [],
+    "external": []
+  },
+  {
+    "browser": "webkit",
+    "status": "passed",
+    "limitations": [],
+    "checks": [
+      "relative scripts, local fonts and share metadata load",
+      "six responsive widths; product amount and main action visible at 390",
+      "wallet sheet has a recoverable no-provider error, Escape closes and restores focus",
+      "amount limits, quick amounts, reserved/hidden text and UTF-8 errors work",
+      "fee approval → pending → 30 judges → approved → sold → overruled",
+      "denial, live four-hour countdown and one paid appeal",
+      "fresh objection panel sustains, sale stands, points are removed",
+      "transaction decoding and past/current leaderboard views",
+      "dead-man dark theme closes cases and enables free selling",
+      "buying is open with balance validation and simulated receipt",
+      "primary plea approval and sale completed with keyboard only",
+      "keyboard focus and automated accessibility scan",
+      "rendered contrast in both themes, 200% text reflow, focus and reduced motion",
+      "EIP-6963 discovery, rejection, chain add/switch, disconnect and four mobile wallet links",
+      "zero console errors, failed local assets or backend requests"
+    ],
+    "metrics": [
+      {
+        "width": 320,
+        "scrollWidth": 320,
+        "actionBottom": 415.75,
+        "amountTop": 878.828125
+      },
+      {
+        "width": 390,
+        "scrollWidth": 390,
+        "actionBottom": 327.375,
+        "amountTop": 734.65625
+      },
+      {
+        "width": 640,
+        "scrollWidth": 640,
+        "actionBottom": 327.375,
+        "amountTop": 734.65625
+      },
+      {
+        "width": 820,
+        "scrollWidth": 820,
+        "actionBottom": 453.734375,
+        "amountTop": 856.984375
+      },
+      {
+        "width": 1024,
+        "scrollWidth": 1024,
+        "actionBottom": 474.671875,
+        "amountTop": 856.984375
+      },
+      {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "actionBottom": 474.671875,
+        "amountTop": 856.984375
+      }
+    ],
+    "errors": [],
+    "failed": [],
+    "external": []
+  }
+]
